@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(28, 65, 90);
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(200, 255, 0), rgb(179, 255, 0));
+    clip-path: circle(30% at right 70%);
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(0, 140, 255), rgb(255, 0, 128));
+    clip-path: circle(20% at 10% 10%);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.container .card {
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px black;
+    border-radius: 15px;
+    background: rgb(41, 73, 85, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid whitesmoke;
+    border-left: 1px solid whitesmoke;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.container .card .content {
+    padding: 20px;
+    text-align: center;
+    transition: .5%;
+    transform: translateY(300px);
+}
+
+.container .card:hover .content {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.container .card .content h2 {
+    position: absolute;
+    top: -80px;
+    right: 30px;
+    font-size: 6rem;
+    color: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+
+.container .card .content h3 {
+    font-size: 1.8rem;
+    color: whitesmoke;
+    text-transform: capitalize;
+    z-index: 1;
+}
+
+.container .card .content p {
+    font-size: 1rem;
+    color: white;
+    text-transform: capitalize;
+    word-wrap: break-word;
+    word-break: break-all;
+    letter-spacing: 1px;
+    ;
+}
+
+.container .card .content a {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 5px;
+}
